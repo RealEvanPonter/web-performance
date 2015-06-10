@@ -75,7 +75,7 @@ like to see on the screen using the slider.
 
 ### Optimizations Outline
 
-# index.html
+#### index.html
 Loading an external font was render-blocking the text on the page. Removing
 this resource improved the speed of the inital load.
 
@@ -83,7 +83,7 @@ Inlining the CSS proved to speed up the page load, since there was one less
 roundtrip for a resource
 
 
-# main.js (for pizza.html)
+#### main.js (for pizza.html)
 The changePizzaSizes function was refactored to improve performance. Instead
 of using pixels to specify a new size, it uses a percentage value that is
 calculated before iterating through each pizza element and changing the size.
