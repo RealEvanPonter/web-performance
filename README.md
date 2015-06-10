@@ -63,3 +63,43 @@ Feeling uninspired by the portfolio? Here's a list of cool portfolios I found af
 * <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
 * <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
 * <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+
+### Running Instructions
+
+Navigate to http://realevanponter.github.io/
+Choose a link of interest
+Scroll as desired
+
+If you choose Cam's Pizzeria, you can choose which size of pizza you would
+like to see on the screen using the slider.
+
+### Optimizations Outline
+
+# index.html
+Loading an external font was render-blocking the text on the page. Removing
+this resource improved the speed of the inital load.
+
+Inlining the CSS proved to speed up the page load, since there was one less
+roundtrip for a resource
+
+
+# main.js (for pizza.html)
+The changePizzaSizes function was refactored to improve performance. Instead
+of using pixels to specify a new size, it uses a percentage value that is
+calculated before iterating through each pizza element and changing the size.
+A variable is used to store the length of randomPizzas instead of having to
+calculate it on each iteration.
+
+The function that runs when DOMContentLoaded is called was not effectively
+calculating how many pizza elements would need to be created. It now uses the
+height of the window to determine how many rows of pizzas to make. This reduces
+the number of elements that are created, and speeds up the performance of the
+page.
+
+
+
+### Resources
+I followed along with the two web performance courses for this project very closely
+and started working on this project as they were going over topics that related
+directly to speeding up the performance of this website. The only function I had to
+look up was the window.innerHeight() function, which I found on developer.mozilla.org

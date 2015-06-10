@@ -463,10 +463,13 @@ var resizePizzas = function(size) {
         console.log("bug in sizeSwitcher");
     }
     
+    // this call performs quicker
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
     
+    // store the length of randomPizzas instead of calculating it each time
     var randomPizzasLength = randomPizzas.length;
     
+    // use the new percentage for newWidth that was determined above
     for (var i = 0; i < randomPizzasLength; i++) {
       randomPizzas[i].style.width = newWidth + "%";
     }
@@ -542,7 +545,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  var docHeight = window.innerHeight;
+  var docHeight = window.innerHeight; // calculate doc height once
   
   for (var i = 0; i < docHeight; i++) {
     var elem = document.createElement('img');
