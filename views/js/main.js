@@ -471,7 +471,7 @@ var resizePizzas = function(size) {
     var randomPizzasLen = randomPizzas.length;
     
     // iterate through each pizza element and specify the new size
-    for (var i = 0; i < randomPizzasLen; i++) {
+    for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + "%";
     }
   }
